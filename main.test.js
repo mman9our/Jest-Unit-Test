@@ -44,3 +44,19 @@ test('should return the sum of an unknown amount of comma-separated numbers', ()
     // Assert
     expect(result).toBe(15);
 });
+
+test('should throw an error for single negative number', () => {
+    // Arrange
+    const input = '-1';
+
+    // Act and Assert
+    expect(() => add(input)).toThrow('Negatives not allowed. Negative number found: -1.');
+});
+
+test('should throw an error for negative numbers', () => {
+    // Arrange
+    const input = '1,-2,3,-4';
+
+    // Act and Assert
+    expect(() => add(input)).toThrow('Negatives not allowed. Negative numbers found: -2, -4.');
+});
