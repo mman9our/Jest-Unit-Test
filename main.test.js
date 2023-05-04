@@ -60,3 +60,15 @@ test('should throw an error for negative numbers', () => {
     // Act and Assert
     expect(() => add(input)).toThrow('Negatives not allowed. Negative numbers found: -2, -4.');
 });
+
+test('should ignore numbers larger than 1000', () => {
+    // Arrange
+    const input = '2,1001';
+
+    // Act
+    const result = add(input);
+
+    // Assert
+    expect(result).toBe(2);
+});
+

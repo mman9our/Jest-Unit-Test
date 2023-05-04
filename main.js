@@ -18,7 +18,9 @@ function add(numbers) {
             negatives.push(parsedNum);
         }
 
-        sum += parsedNum;
+        if (parsedNum <= 1000) {
+            sum += parsedNum;
+        }
     }
 
     if (negatives.length === 1) {
@@ -29,6 +31,7 @@ function add(numbers) {
         const negativesString = negatives.join(', ');
         throw new Error(`Negatives not allowed. Negative numbers found: ${negativesString}.`);
     }
+
     return sum;
 }
 
