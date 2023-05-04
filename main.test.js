@@ -34,10 +34,13 @@ test('should return the sum of two comma-separated numbers', () => {
     expect(result).toBe(3);
 });
 
-test('should throw an error for more than two comma-separated numbers', () => {
+test('should return the sum of an unknown amount of comma-separated numbers', () => {
     // Arrange
-    const input = '1,2,3';
+    const input = '1,2,3,4,5';
 
-    // Act and Assert
-    expect(() => add(input)).toThrow('Only up to two numbers are allowed.');
+    // Act
+    const result = add(input);
+
+    // Assert
+    expect(result).toBe(15);
 });
